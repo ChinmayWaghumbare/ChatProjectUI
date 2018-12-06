@@ -1,0 +1,25 @@
+﻿
+p {
+    display: inline-block;
+    padding: 5px 6px 8px 6px;
+    border-radius: 6px;
+    float: right;
+    margin-right: 40px;
+    color: black;
+    background-color: #dae0e5;
+    position: relative;
+    width: 80%;
+}
+
+    p:after {
+        content: "";
+        position: absolute;
+        margin-top: -6px;
+        margin-left: -5px;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid #dae0e5;
+        transform: rotate(-45deg);
+        right: -15px;
+        top: 10px;
+    }
