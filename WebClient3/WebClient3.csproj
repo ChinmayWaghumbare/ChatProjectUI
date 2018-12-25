@@ -78,6 +78,8 @@
     <Content Include="html\signUp.html" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\login.js" />
+    <Content Include="js\messageList.js" />
+    <Content Include="js\profile.js" />
     <Content Include="js\signUp.js" />
     <Content Include="Web.config" />
   </ItemGroup>
