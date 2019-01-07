@@ -114,3 +114,10 @@ D:\Chinmay\WebClient3\WebClient3\obj\Debug\WebClient3.csproj.CoreCompileInputs.c
 D:\Chinmay\WebClient3\WebClient3\obj\Debug\WebClient3.csproj.CopyComplete
 D:\Chinmay\WebClient3\WebClient3\obj\Debug\WebClient3.dll
 D:\Chinmay\WebClient3\WebClient3\obj\Debug\WebClient3.pdb
+E:\Project\WebClient3\WebClient3\obj\Debug\WebClient3.csprojResolveAssemblyReference.cache
+E:\Project\WebClient3\WebClient3\obj\Debug\WebClient3.dll
+E:\Project\WebClient3\WebClient3\obj\Debug\WebClient3.pdb
+E:\Project\WebClient3\WebClient3\bin\WebClient3.dll
+E:\Project\WebClient3\WebClient3\bin\WebClient3.pdb
+E:\Project\WebClient3\WebClient3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\WebClient3\WebClient3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
