@@ -3,14 +3,25 @@ p {
     display: inline-block;
     padding: 5px 6px 8px 6px;
     border-radius: 6px;
-    float: right;
-    margin-right: 40px;
+    /*float: right;*/
+    /*margin-right: 40px;*/
     color: black;
     background-color: #dae0e5;
     position: relative;
-    width: 80%;
+    width: 90%;
 }
 
+.leftMsg {
+    float:left;
+    word-wrap:break-word;
+}
+
+.rightMsg {
+    margin-left:-10px;
+    float:right;
+    word-wrap:break-word;
+}
+/*
     p:after {
         content: "";
         position: absolute;
@@ -23,3 +34,4 @@ p {
         right: -15px;
         top: 10px;
     }
+    */
