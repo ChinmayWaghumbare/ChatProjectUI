@@ -1,12 +1,12 @@
 ﻿$(document).ready(function () {
 
-
+    sessionStorage.removeItem("fromUserName");
     var userName = sessionStorage.getItem('userName');
     $.ajax({
         url: 'http://localhost:64002/api/MESSAGEMAST/getMessageList?userName=' + userName,
         type: 'GET',
         dataType: 'json',
-        contentType: 'text',
+        contentType: 'application/json',
         crossDomain: true,
         success: function (data) {
             //length = data.Length;
