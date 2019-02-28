@@ -11,13 +11,19 @@
 
     <title></title>
 </head>
-<body style="height:100%" class="container-fluid">
+<body class="container-fluid">
     <div class="header row sticky-top">
         <div class="col-3"><i style="margin-left: -22px;" class="fas fa-arrow-left glyphicon btn" id="backBtn"></i></div>
         <div class="col-9"><strong id="toUserName">App</strong></div>
     </div>
-    <div id="messageList" class="row" style="padding-top: 10px;">
+    <div class ="scrollable">
+        <div id="messageList" class="row" style="padding-top: 10px;">
         
+        </div>
+
+        <div>
+             <span id="loadMoreBottom"> Load More </span>
+        </div>
     </div>
     <div class="sticky-footer row">
         <div class="col-10 ">
