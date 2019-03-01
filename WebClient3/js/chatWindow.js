@@ -110,4 +110,31 @@
         });
         
     });
+
+    $('.sendBtn').click(function () {
+        var msg = $('#msgTextField').val();
+        if (msg.trim().length > 0) {
+            var data = {
+                fromUser: fromUserName,
+                toUser: toUserName,
+                mesg: {
+                    MSG: meg
+                }
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:64002/api/MESSAGEMAST/addNewMessage',
+                contentType: 'application/json',
+
+                data: JSON.stringify(data),
+                crossDomain: true,
+                success: function (data) {
+
+                },
+                error: function (data) {
+
+                }
+            });
+        }
+    });
 });
