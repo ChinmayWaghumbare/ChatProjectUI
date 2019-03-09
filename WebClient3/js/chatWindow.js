@@ -118,7 +118,7 @@
                 fromUser: fromUserName,
                 toUser: toUserName,
                 mesg: {
-                    MSG: meg
+                    MSG: msg
                 }
             };
             $.ajax({
