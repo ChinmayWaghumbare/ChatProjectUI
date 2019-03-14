@@ -26,7 +26,7 @@
                 if (result == 1) {
 
                     getUserName(uid);
-                    $(location).attr('href', 'messageList.html');
+                    
                 }
                 else {
                     alert("Error Occured");
@@ -45,11 +45,12 @@
             type: 'GET',
             processData: false,
             contentType: 'application/json',
-            dataType: 'Text',
+            dataType: 'json',
             crossDomain: true,
             success: function (result, data) {
                 if (result != '') {
                     sessionStorage.setItem('userName', result);
+                    $(location).attr('href', 'messageList.html');
                 }
                 else {
                     alert("Error Occured");
