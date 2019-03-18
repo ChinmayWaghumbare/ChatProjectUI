@@ -17,9 +17,10 @@
         //data: data,
         crossDomain:true,
         success: function (data) {
-            firstMsgSendTime = getDate();//new Date().toLocaleString();  // also set time in prev message
+            //firstMsgSendTime = getDate();//new Date().toLocaleString();  // also set time in prev message
             if (data.length > 0) {
-                sortMessages(data);
+                firstMsgSendTime = data[0]["mesg"]["SENDTIME"];
+                sortMessages(data,"next");
                 lastMsgSendTime = data[data.length - 1]["mesg"]["SENDTIME"];
                 var updateData = {
                     mesg: {
@@ -43,7 +44,8 @@
                 });
             }
             else {
-
+                //set firstMsgSendTime = CurrentDate
+                //set lastMsgSendTime = CurrentDate
             }
         },
         error: function (data) {
@@ -67,36 +69,49 @@
         return formatedDay + "-" + formatedMonth + "-" + year + " " + formatedHour + ':' + formatedMinute + ':' + formatedSecond;
     };
 
-    sortMessages = function (data) {
+    sortMessages = function (data,pos) {
         //firstMsgSendTime = data[0]["mesg"]["SENDTIME"];
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].fromUser==fromUserName) {
-                $('#messageList').append("<div class='col-12'><p class='leftMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
-                
-            }
-            else {
-                $('#messageList').append("<div class='col-12'><p class='rightMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
+        if (pos == "next") {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].fromUser == fromUserName) {
+                    $('#messageList').append("<div class='col-12'><p class='leftMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
+
+                }
+                else {
+                    $('#messageList').append("<div class='col-12'><p class='rightMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
+                }
             }
         }
-        
+        else if (pos == "prev") {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].fromUser == fromUserName) {
+                    $('#messageList').prepend("<div class='col-12'><p class='leftMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
+
+                }
+                else {
+                    $('#messageList').prepend("<div class='col-12'><p class='rightMsg'>" + data[i]["mesg"]["MSG"] + "</p></div>");
+                }
+            }
+        }
     };
 
 
     $('#loadMoreBottom').click(function () {
 
-        var data = {
-            lastMesgTime:lastMesgTime
-        };
+        //var data = {
+        //    lastMesgTime: lastMsgSendTime
+        //};
+        lastMesgTime = lastMsgSendTime;
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:64002/api/MESSAGEMAST/getNextMessages?fromUser=' + fromUserName + '&toUser=' + toUserName,
+            url: 'http://localhost:64002/api/MESSAGEMAST/getNextMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&lastMesgTime=' + lastMesgTime,
             contentType: 'application/json',
 
-            data: JSON.stringify(data),
+            //data: JSON.stringify(data),
             crossDomain: true,
             success: function (data) {
                 if (data.length > 0) {
-                    sortMessages(data);
+                    sortMessages(data,"next");
                     lastMsgSendTime = data[data.length-1]["mesg"]["SENDTIME"];
                     var updateData = {
                         mesg: {
@@ -167,4 +182,32 @@
         }
 
     });
+
+    getPreviousMessage = function () {
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:64002/api/MESSAGEMAST/getPrevMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&time=' + firstMsgSendTime,
+            contentType: 'application/json',
+
+            //data: data,
+            crossDomain: true,
+            success: function (data) {
+                //firstMsgSendTime = getDate();//new Date().toLocaleString();  // also set time in prev message
+                if (data.length > 0) {
+                    firstMsgSendTime = data[0]["mesg"]["SENDTIME"];
+                    sortMessages(data,"prev");
+                    
+                }
+                else {
+                    //set firstMsgSendTime = CurrentDate
+                    //set lastMsgSendTime = CurrentDate
+                }
+            },
+            error: function (data) {
+
+            }
+        });
+
+    };
 });
