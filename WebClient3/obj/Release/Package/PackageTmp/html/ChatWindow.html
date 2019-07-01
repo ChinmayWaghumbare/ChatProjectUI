@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link href="../css/login.css" rel="stylesheet" />
+    <link href="../css/ChatWindow.css" rel="stylesheet" />
+    
+    
+
+
+    <title></title>
+</head>
+<body class="container-fluid">
+    <div class="header row sticky-top">
+        <div class="col-3"><i style="margin-left: -22px;" class="fas fa-arrow-left glyphicon btn" id="backBtn"></i></div>
+        <div class="col-9"><strong id="toUserName">App</strong></div>
+    </div>
+    <div class ="scrollable">
+        <div>
+            <span id="loadPrev">Load More</span> 
+        </div>
+        <div id="messageList" class="row" style="padding-top: 10px;">
+        
+        </div>
+
+        <div>
+             <span id="loadMoreBottom"> Load More </span>
+        </div>
+    </div>
+    <div class="sticky-footer row">
+        <div class="col-10 ">
+            <input type="text" class="form-control" id="msgTextField">
+        </div>
+        <div class="col-2">
+            <i class="far fa-check-circle sendBtn"></i>
+
+
+        </div>
+    </div>
+
+</body>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<script src="../js/jquery.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+<script src="../js/jquery.signalR-2.4.0.js" defer></script>
+<script src="http://localhost:64002/signalr/hubs" type="text/javascript" defer></script>
+<script src="../js/chatWindow.js" defer></script>
+
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Publish_Client</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.AspNet.SignalR.Client.dll">
+      <publishTime>11/13/2018 10:54:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Client.pdb">
+      <publishTime>11/13/2018 18:48:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/08/2018 23:35:14</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/WebClient3.dll">
+      <publishTime>06/09/2019 22:28:23</publishTime>
+    </File>
+    <File Include="bin/WebClient3.pdb">
+      <publishTime>06/09/2019 22:28:23</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>03/20/2019 00:26:19</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>12/08/2018 23:35:14</publishTime>
+    </File>
+    <File Include="css/ChatWindow.css">
+      <publishTime>02/28/2019 22:12:25</publishTime>
+    </File>
+    <File Include="css/login.css">
+      <publishTime>12/08/2018 23:35:14</publishTime>
+    </File>
+    <File Include="html/ChatWindow.html">
+      <publishTime>03/22/2019 15:22:38</publishTime>
+    </File>
+    <File Include="html/login.html">
+      <publishTime>03/21/2019 17:46:53</publishTime>
+    </File>
+    <File Include="html/messageList.html">
+      <publishTime>03/20/2019 00:44:24</publishTime>
+    </File>
+    <File Include="html/Profile.html">
+      <publishTime>03/17/2019 23:52:52</publishTime>
+    </File>
+    <File Include="html/signUp.html">
+      <publishTime>03/17/2019 23:51:19</publishTime>
+    </File>
+    <File Include="js/bootstrap.bundle.js">
+      <publishTime>03/20/2019 00:39:30</publishTime>
+    </File>
+    <File Include="js/bootstrap.js">
+      <publishTime>03/21/2019 17:24:10</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>03/21/2019 17:24:12</publishTime>
+    </File>
+    <File Include="js/chatWindow.js">
+      <publishTime>04/07/2019 03:26:41</publishTime>
+    </File>
+    <File Include="js/jquery.js">
+      <publishTime>03/21/2019 17:43:59</publishTime>
+    </File>
+    <File Include="js/jquery.signalR-2.4.0.js">
+      <publishTime>03/21/2019 06:38:18</publishTime>
+    </File>
+    <File Include="js/login.js">
+      <publishTime>02/22/2019 00:15:38</publishTime>
+    </File>
+    <File Include="js/logOut.js">
+      <publishTime>02/24/2019 20:23:06</publishTime>
+    </File>
+    <File Include="js/messageList.js">
+      <publishTime>02/24/2019 00:11:11</publishTime>
+    </File>
+    <File Include="js/profile.js">
+      <publishTime>12/11/2018 22:10:31</publishTime>
+    </File>
+    <File Include="js/signUp.js">
+      <publishTime>03/11/2019 23:29:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/09/2019 22:28:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

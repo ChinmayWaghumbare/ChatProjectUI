@@ -1,0 +1,31 @@
+﻿.center {
+    margin: auto;
+    width: 300px;
+    padding: 15px;
+    /*border: 1px solid grey;*/
+}
+
+form {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.badge {
+    background-color: #879eb1;
+}
+
+.glyphicon {
+    font-size: 30px;
+}
+
+.header {
+    background-color: #80ffbf;
+    padding: 10px;
+}
+
+.btn {
+    padding-top: 0px;
+}

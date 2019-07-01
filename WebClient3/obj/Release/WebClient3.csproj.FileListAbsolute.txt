@@ -1,0 +1,15 @@
+E:\Project\WebClient3\WebClient3\bin\WebClient3.dll.config
+E:\Project\WebClient3\WebClient3\bin\WebClient3.dll
+E:\Project\WebClient3\WebClient3\bin\WebClient3.pdb
+E:\Project\WebClient3\WebClient3\bin\Microsoft.AspNet.SignalR.Client.dll
+E:\Project\WebClient3\WebClient3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\WebClient3\WebClient3\bin\Newtonsoft.Json.dll
+E:\Project\WebClient3\WebClient3\bin\Microsoft.AspNet.SignalR.Client.pdb
+E:\Project\WebClient3\WebClient3\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\Project\WebClient3\WebClient3\bin\Newtonsoft.Json.xml
+E:\Project\WebClient3\WebClient3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\WebClient3\WebClient3\obj\Release\WebClient3.csproj.CoreCompileInputs.cache
+E:\Project\WebClient3\WebClient3\obj\Release\WebClient3.csproj.CopyComplete
+E:\Project\WebClient3\WebClient3\obj\Release\WebClient3.dll
+E:\Project\WebClient3\WebClient3\obj\Release\WebClient3.pdb
+E:\Project\WebClient3\WebClient3\obj\Release\WebClient3.csprojAssemblyReference.cache
