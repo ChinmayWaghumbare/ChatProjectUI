@@ -36,5 +36,27 @@
         $(location).attr('href', 'ChatWindow.html');
     };
 
+    //For new user Search for chat
+    $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    $("#searchNewUser").click(function () {
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:64002/api/USERINFO/GetUSERINFOes',
+            crossDomain: true,
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (result) {
+                console.log(result);
+            }
+        });
+    });
 });
 
