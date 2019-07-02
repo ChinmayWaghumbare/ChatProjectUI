@@ -51,7 +51,7 @@
                         });
                     }
                     else {
-
+                       
                     }
                 },
                 error: function (data) {
@@ -78,8 +78,8 @@
         $(location).attr('href', 'messageList.html');
     });
 
-    var fromUserName = sessionStorage.getItem('fromUserName');
-    var toUserName = sessionStorage.getItem('userName');
+     fromUserName = sessionStorage.getItem('fromUserName');
+     toUserName = sessionStorage.getItem('userName');
 
     //var data = { fromUser: fromUserName, toUser: toUserName };
     //data = JSON.stringify(data);
@@ -170,54 +170,9 @@
     };
 
 
-    $('#loadMoreBottom').click(function () {
+    $('#loadMoreBottom').click(getNextMessage);
 
-        //var data = {
-        //    lastMesgTime: lastMsgSendTime
-        //};
-        lastMesgTime = lastMsgSendTime;
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:64002/api/MESSAGEMAST/getNextMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&lastMesgTime=' + lastMesgTime,
-            contentType: 'application/json',
-
-            //data: JSON.stringify(data),
-            crossDomain: true,
-            success: function (data) {
-                if (data.length > 0) {
-                    sortMessages(data,"next");
-                    lastMsgSendTime = data[data.length-1]["mesg"]["SENDTIME"];
-                    var updateData = {
-                        mesg: {
-                            SENDTIME: lastMsgSendTime
-                        },
-                        fromUser: fromUserName,
-                        toUser: toUserName
-                    };
-                    $.ajax({
-                        type: 'PUT',
-                        url: 'http://localhost:64002/api/MESSAGEMAST/updateMsg',
-                        data: JSON.stringify(updateData),
-                        contentType: 'application/json',
-                        crosDomain: true,
-                        success: function (data) {
-
-                        },
-                        error: function (data) {
-
-                        }
-                    });
-                }
-                else {
-
-                }
-            },
-            error: function (data) {
-
-            }
-        });
-        
-    });
+    
 
     $('.sendBtn').click(function () {
         var msg = $('#msgTextField').val();
@@ -251,7 +206,7 @@
         }
     });
 
-    $('loadPrev').click(getPreviousMessage);
+    $('#loadPrev').click(getPreviousMessage);
 
     
     //$('.scrollable').scroll(function () {
@@ -263,33 +218,84 @@
 
     //});
 
-   var getPreviousMessage = function () {
-
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost:64002/api/MESSAGEMAST/getPrevMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&firstMsgSendTime=' + firstMsgSendTime,
-            contentType: 'application/json',
-
-            //data: data,
-            crossDomain: true,
-            success: function (data) {
-                //firstMsgSendTime = getDate();//new Date().toLocaleString();  // also set time in prev message
-                if (data.length > 0) {
-                    firstMsgSendTime = data[0]["mesg"]["SENDTIME"];
-                    sortMessages(data,"prev");
-                    
-                }
-                else {
-                    //set firstMsgSendTime = CurrentDate
-                    //set lastMsgSendTime = CurrentDate
-                }
-            },
-            error: function (data) {
-
-            }
-        });
-
-    };
+  
 
 
 });
+
+var getNextMessage = function () {
+
+    //var data = {
+    //    lastMesgTime: lastMsgSendTime
+    //};
+    lastMesgTime = lastMsgSendTime;
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:64002/api/MESSAGEMAST/getNextMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&lastMesgTime=' + lastMesgTime,
+        contentType: 'application/json',
+
+        //data: JSON.stringify(data),
+        crossDomain: true,
+        success: function (data) {
+            if (data.length > 0) {
+                sortMessages(data, "next");
+                lastMsgSendTime = data[data.length - 1]["mesg"]["SENDTIME"];
+                var updateData = {
+                    mesg: {
+                        SENDTIME: lastMsgSendTime
+                    },
+                    fromUser: fromUserName,
+                    toUser: toUserName
+                };
+                $.ajax({
+                    type: 'PUT',
+                    url: 'http://localhost:64002/api/MESSAGEMAST/updateMsg',
+                    data: JSON.stringify(updateData),
+                    contentType: 'application/json',
+                    crosDomain: true,
+                    success: function (data) {
+
+                    },
+                    error: function (data) {
+
+                    }
+                });
+            }
+            else {
+
+            }
+        },
+        error: function (data) {
+
+        }
+    });
+
+}
+
+var getPreviousMessage = function () {
+
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:64002/api/MESSAGEMAST/getPrevMessages?fromUser=' + fromUserName + '&toUser=' + toUserName + '&firstMsgSendTime=' + firstMsgSendTime,
+        contentType: 'application/json',
+
+        //data: data,
+        crossDomain: true,
+        success: function (data) {
+            //firstMsgSendTime = getDate();//new Date().toLocaleString();  // also set time in prev message
+            if (data.length > 0) {
+                firstMsgSendTime = data[0]["mesg"]["SENDTIME"];
+                sortMessages(data, "prev");
+
+            }
+            else {
+                //set firstMsgSendTime = CurrentDate
+                //set lastMsgSendTime = CurrentDate
+            }
+        },
+        error: function (data) {
+
+        }
+    });
+
+};
