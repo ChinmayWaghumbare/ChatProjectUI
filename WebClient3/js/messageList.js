@@ -30,11 +30,7 @@
         user=user[0].attributes.data.value;
         getMessage(user);
     });
-    var getMessage = function (fromUserName) {
-
-        sessionStorage.setItem('fromUserName', fromUserName);
-        $(location).attr('href', 'ChatWindow.html');
-    };
+    
 
     //For new user Search for chat
     $("#myInput").on("keyup", function () {
@@ -51,12 +47,46 @@
             url: 'http://localhost:64002/api/USERINFO/GetUSERINFOes',
             crossDomain: true,
             success: function (result) {
-                console.log(result);
+                //console.log(result);
+                $("#test").find('li').remove();
+                for (var i = 0; i < result.length; i++) {
+                    result.splice(result.indexOf(userName), 1); // to remove current logged in user from searchlist
+                    //$('#myInput').after("<li onclick=selectedUser1('" + result[i] + "')>" + result[i] + "</li>");  // By passing value to function
+                    $('#myInput').after("<li onclick=selectedUser(event)>" + result[i] + "</li>");  //By passing event as argument
+                }
+
             },
             error: function (result) {
-                console.log(result);
+                alert(result);
             }
         });
+
+
     });
+
+    
+    
 });
+
+var getMessage = function (fromUserName) {
+
+    sessionStorage.setItem('fromUserName', fromUserName);
+    $(location).attr('href', 'ChatWindow.html');
+};
+
+
+function selectedUser(event) {
+    //alert(event.target.innerText);
+    //console.log(event.target.innerText);
+    
+    var user = event.target.innerText;
+    
+    getMessage(user);
+};
+
+//function selectedUser1(name) {
+//    alert(name);
+//    console.log(name);
+//};
+
 
