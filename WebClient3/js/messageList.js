@@ -49,9 +49,10 @@
             success: function (result) {
                 //console.log(result);
                 if (result.length > 1) {
+                    result.splice(result.indexOf(userName), 1); // to remove current logged in user from searchlist
                     $("#test").find('li').remove();
                     for (var i = 0; i < result.length; i++) {
-                        result.splice(result.indexOf(userName), 1); // to remove current logged in user from searchlist
+                        
                         //$('#myInput').after("<li onclick=selectedUser1('" + result[i] + "')>" + result[i] + "</li>");  // By passing value to function
                         $('#myInput').after("<li onclick=selectedUser(event)>" + result[i] + "</li>");  //By passing event as argument
                     }
